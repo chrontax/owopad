@@ -69,7 +69,7 @@ struct Node {
 Sets config property `k` of key of id `i` (zero-indexed) to `v`
 
 #### `bind<seq:str>:<k:key>`
-Sets sequence `seq` to correspond to key `k`. Besides the obvious characters `k` can be:
+Sets sequence `seq` (keys, e.g. `LRM` for a seqence of: left key, right key, middle key) to correspond to key `k`. Besides the obvious characters `k` can be:
 * `F<1..=12>` for function keys,
 * `_RIGHT`, `_LEFT`, `_UP`, `_DOWN` for arrows,
 * self explanatory: `_ENTER`, `_ESC`, `_TAB`, `_BACKSP`, `_CAPS`, `_PS`, `_INS`, `_HOME`, `_PGUP`, `_DEL`, `_END`, `_PGDOWN`, `_LCTRL`, `_LSHIFT`, `_LALT`, `_RCTRL`, `_RSHIFT`, `_RALT`.
