@@ -117,7 +117,7 @@ fn main() -> ! {
         .add_device(NKROBootKeyboardConfig::default())
         .build(&usb_bus);
 
-    let mut usb_dev = UsbDeviceBuilder::new(&usb_bus, UsbVidPid(0x1209, 0x0001)).build();
+    let mut usb_dev = UsbDeviceBuilder::new(&usb_bus, UsbVidPid(0x5566, 0x0001)).build();
 
     let pins = Pins::new(
         pac.IO_BANK0,
