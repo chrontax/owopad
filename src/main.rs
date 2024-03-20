@@ -184,7 +184,7 @@ fn main() -> ! {
                         k.config = KeyConfig::new();
                     }
                 }
-                b"config" => send_serial(&mut serial, configs),
+                b"config" => send_serial(&mut serial, keys.map(|k| k.config)),
                 b"nodes" => send_serial(&mut serial, nodes),
                 other if other.starts_with(b"key") => {
                     let mut iter = other
