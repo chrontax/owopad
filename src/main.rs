@@ -468,7 +468,7 @@ impl Key {
             if depth < self.uwu {
                 // pressed deeper
                 self.uwu = depth;
-            } else if depth == 400 || depth > self.uwu + self.config.rt_up {
+            } else if depth > SWITCH_TRAVEL - 5 || depth > self.uwu + self.config.rt_up {
                 // let go
                 self.hold = None;
                 self.pressed = false;
