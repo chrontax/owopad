@@ -174,6 +174,10 @@ fn main() -> ! {
                 b"depth" => send_serial(&mut serial, depth),
                 b"save" => save(nodes, keys.map(|k| k.config)),
                 b"time" => send_serial(&mut serial, last_time.to_le_bytes()),
+                b"consts" => send_serial(
+                    &mut serial,
+                    [NODE_COUNT as u16, SWITCH_TRAVEL, AUTOCALIBRATION_DEADZONE],
+                ),
                 b"clear" => {
                     nodes = [Node::new(None); NODE_COUNT];
                     len = 1;
