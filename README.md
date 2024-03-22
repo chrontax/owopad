@@ -2,9 +2,16 @@
 
 Alternative firmware for the [minipad](https://github.com/minipadkb/minipad)
 
+This firmware unlike the official doesn't bind keys 1 to 1, it uses key sequences for typing.
+
+## Features:
+* unlimited keys via sequences,
+* rapid trigger,
+* configuration via serial.
+
 ## Installation
 
-Download a release if I actually make one, otherwise build:
+Download a release or build:
 ```bash
 cargo build --release
 cd target/thumbv6m-none-eabi/release
@@ -17,12 +24,17 @@ picotool load owopad.uf2
 picotool reboot
 ```
 
+By default there a no defined keybinds
+
 ## Configuration
 
 Until I write some utility you have to just send commands over serial.
 
 ### Serial Commands
 All returned numbers are in little endian
+
+#### `save`
+Save current binds and key configuration to flash
 
 #### `boot`
 Puts the keypad into BOOTSEL mode
@@ -35,6 +47,9 @@ Sends last adc readings as [u16; 3]
 
 #### `depth`
 Sends last calculated key depth as [u16; 3]
+
+#### `consts`
+Sends firmware constants `[NODE_COUNT, SWITCH_TRAVEL, AUTOCALIBRATION_DEADZONE]` as [u16; 3]
 
 #### `time`
 Sends last main loop time as u64
