@@ -28,7 +28,7 @@ By default there a no defined keybinds
 
 ## Configuration
 
-Until I write some utility you have to just send commands over serial.
+There is a utility for configuration: [OwOtility](https://github.com/chrontax/owotility)
 
 ### Serial Commands
 All returned numbers are in little endian
