@@ -24,7 +24,7 @@ picotool load owopad.uf2
 picotool reboot
 ```
 
-By default there a no defined keybinds
+By default there are no defined keybinds
 
 ## Configuration
 
